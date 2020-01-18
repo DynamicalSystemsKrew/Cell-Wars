@@ -25,8 +25,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(transform.up);
+        Vector2 facingDirection = transform.up;
+
         //Apply force to the player
-        rigidbody.AddForce(movementDirection * movementForce);
+        if (movementDirection.magnitude > 0) {
+            rigidbody.AddForce(facingDirection * movementForce);
+        }
 
         // Cap the players velocity at the max speed.
         if(rigidbody.velocity.magnitude > maxSpeed)
