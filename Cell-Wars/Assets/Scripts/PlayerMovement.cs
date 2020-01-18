@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    float movementForce = 20f;   //Magnitude of the force of the Player
-    [SerializeField]
-    float maxSpeed = 3f;
-    [SerializeField]
-    float maxAngularVelocity = 3f;
-    [SerializeField]
-    float rotationSpeed = 3f;
-    [SerializeField]
-    float wiggleStrength = 0.01f;
-    Vector2 inputDirection;
-    Rigidbody2D rigidbody;      //Player Rigidbody Component
+    public float movementForce = 20f; // Magnitude of the movement force
+    public float rotationForce = 16f;
+    public float maxSpeed = 5f;
+    public float maxAngularVelocity = 20f;
+    public float wiggleStrength = 2f; // Size of the wiggling
+    public int wiggleFrequency = 5;
 
-    int wiggleDirection;
-    int wiggleCounter;
-    [SerializeField]
-    int wiggleFrequency = 20;
+    Vector2 inputDirection;
+    Rigidbody2D rb; // Player Rigidbody Component
+
+    int wiggleDirection; // 1 = CW, -1 = CCW
+    int wiggleCounter; // Count to decide when to change wiggle direction
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = this.GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
         wiggleCounter = 0;
         wiggleDirection = 1;
     }
@@ -46,30 +41,38 @@ public class PlayerMovement : MonoBehaviour
         //Apply force to the player
         if (inputDirection.magnitude > 0) {
             // Rotate player
-            rigidbody.AddTorque(rotationDirection * (angleBetween + 0.2f) * rotationSpeed);
+            rb.AddTorque(rotationDirection * (angleBetween + 0.2f) * rotationForce);
 
             // Add force
-            rigidbody.AddForce((1 - angleBetween) * facingDirection * movementForce);
+            rb.AddForce((1 - angleBetween) * facingDirection * movementForce);
         }
 
+        ClampMovement();
+        AddWiggle();
+    }
+
+    // Clamps the movement to within the maximum speeds.
+    void ClampMovement() {
         // Cap the players velocity at the max speed.
-        if(rigidbody.velocity.magnitude > maxSpeed)
+        if(rb.velocity.magnitude > maxSpeed)
          {
-            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
+            rb.velocity = rb.velocity.normalized * maxSpeed;
          }
 
         // Cap the players velocity at the max speed.
-        if(Mathf.Abs(rigidbody.angularVelocity) > maxAngularVelocity)
+        if(Mathf.Abs(rb.angularVelocity) > maxAngularVelocity)
          {
-            rigidbody.angularVelocity = Mathf.Clamp(rigidbody.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
+            rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
          }
+    }
 
+    // Adds a slight wiggle to the player when moving.
+    void AddWiggle() {
         if (wiggleCounter >= wiggleFrequency) {
             wiggleDirection = wiggleDirection * -1;
             wiggleCounter = 0;
         }
-        rigidbody.AddTorque((rigidbody.velocity.magnitude / maxSpeed) * wiggleDirection * wiggleStrength);
+        rb.AddTorque((rb.velocity.magnitude / maxSpeed) * wiggleDirection * wiggleStrength);
         wiggleCounter++;
-        
     }
 }
