@@ -297,7 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1b88beb263d8649ac9c4f04a34b486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1134548361}
+  Projectile: {fileID: 4082806515737085279, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
+    type: 3}
   ProjectileSpawnRate: 3
   ProjectileSpawnMax: -1
 --- !u!50 &923881519
@@ -321,83 +322,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1134548361 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4082806515737085279, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-    type: 3}
-  m_PrefabInstance: {fileID: 4082806514689446102}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &4082806514689446102
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085274, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085275, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082806515737085279, guid: 7245d49bd5410a34ea8b0360ed7f66f8,
-        type: 3}
-      propertyPath: m_Name
-      value: Projectile
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7245d49bd5410a34ea8b0360ed7f66f8, type: 3}
