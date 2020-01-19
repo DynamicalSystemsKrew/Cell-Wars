@@ -15,9 +15,14 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField]
     int ProjectileSpawnMax = -1;
 
+    [SerializeField]
+    float AngleShiftNextProjectile = 50f;
+
     private int _numSpawned = 0;
 
     private float _timeElapsedSinceLastSpawn = 0;
+
+    private float _nextAngle = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +44,17 @@ public class ProjectileSpawner : MonoBehaviour
     {
         if (ProjectileSpawnMax < 0 || _numSpawned < ProjectileSpawnMax)
         {
-            Quaternion angle = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward);
-            Vector3 spawnRel = angle * transform.up;
-            GameObject copy = Instantiate(Projectile, transform.position + spawnRel, angle);
-            Destroy(copy, 5);
-            _numSpawned++;
+            Quaternion angle = Quaternion.AngleAxis(_nextAngle, Vector3.forward);
+
+            // Send one in each of 4 cardinal directions
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject copy = Instantiate(Projectile, transform.position, angle);
+                Destroy(copy, 5);
+                angle *= Quaternion.AngleAxis(90f, Vector3.forward);
+                _numSpawned++;
+            }
+            _nextAngle += AngleShiftNextProjectile % 360f;
         }
     }
 }
