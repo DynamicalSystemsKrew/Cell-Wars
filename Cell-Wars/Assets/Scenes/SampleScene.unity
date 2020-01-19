@@ -301,6 +301,7 @@ MonoBehaviour:
     type: 3}
   ProjectileSpawnRate: 3
   ProjectileSpawnMax: -1
+  AngleShiftNextProjectile: 10
 --- !u!50 &923881519
 Rigidbody2D:
   serializedVersion: 4
@@ -332,12 +333,12 @@ PrefabInstance:
     - target: {fileID: 6518932568096555571, guid: 8045bb9ff84ade746a845e1066a8e96f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6518932568096555571, guid: 8045bb9ff84ade746a845e1066a8e96f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6518932568096555571, guid: 8045bb9ff84ade746a845e1066a8e96f,
         type: 3}
@@ -388,6 +389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518932568096555574, guid: 8045bb9ff84ade746a845e1066a8e96f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8045bb9ff84ade746a845e1066a8e96f, type: 3}

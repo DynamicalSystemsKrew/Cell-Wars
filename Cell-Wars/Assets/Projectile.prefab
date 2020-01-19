@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4082806515737085277}
   - component: {fileID: 4082806515737085276}
   - component: {fileID: 4082806515737085275}
+  - component: {fileID: 841681029849920246}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -117,3 +118,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   rb: {fileID: 0}
+  Player: {fileID: 6518932568096555574, guid: 8045bb9ff84ade746a845e1066a8e96f, type: 3}
+--- !u!68 &841681029849920246
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082806515737085279}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.275, y: 0}
+  - {x: 0.275, y: 0}
