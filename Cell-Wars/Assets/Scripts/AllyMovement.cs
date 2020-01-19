@@ -83,4 +83,8 @@ public class AllyMovement : MonoBehaviour
         rb.AddTorque((rb.velocity.magnitude / maxSpeed) * wiggleDirection * wiggleStrength);
         wiggleCounter++;
     }
+
+    public void DestroySelf() {
+        Destroy(gameObject);
+    }
 }
