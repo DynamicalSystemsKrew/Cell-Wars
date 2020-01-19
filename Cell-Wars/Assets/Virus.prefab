@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6518932568096555573}
   - component: {fileID: 6518932568096555572}
   - component: {fileID: 6518932568096555575}
+  - component: {fileID: 1383896156246453145}
   m_Layer: 8
   m_Name: Virus
   m_TagString: Untagged
@@ -148,3 +149,17 @@ MonoBehaviour:
   maxAngularVelocity: 25
   wiggleStrength: 2
   wiggleFrequency: 5
+--- !u!114 &1383896156246453145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6518932568096555574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7fe223b4f04a04eaf9236081bd976a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explosion: {fileID: 7352636142170106858, guid: 548ed1018f14ad74f9c902ae3bb9be9c,
+    type: 3}
