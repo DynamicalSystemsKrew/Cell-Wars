@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6518932568096555573}
   - component: {fileID: 6518932568096555572}
   - component: {fileID: 6518932568096555575}
-  - component: {fileID: 1383896156246453145}
+  - component: {fileID: 7578680297893409285}
   m_Layer: 8
   m_Name: Virus
   m_TagString: Untagged
@@ -149,7 +149,7 @@ MonoBehaviour:
   maxAngularVelocity: 25
   wiggleStrength: 2
   wiggleFrequency: 5
---- !u!114 &1383896156246453145
+--- !u!114 &7578680297893409285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
