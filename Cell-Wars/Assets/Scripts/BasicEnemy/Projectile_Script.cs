@@ -24,7 +24,7 @@ public class Projectile_Script : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Destroy(collision.gameObject);
         }
     }
 }
