@@ -26,5 +26,12 @@ public class Projectile_Script : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (collision.gameObject.tag == "Ally")
+        {
+            AllyMovement allyController = (AllyMovement) collision.gameObject.GetComponent(typeof(AllyMovement));
+            allyController.DestroySelf();
+        }
+        Destroy(gameObject);
     }
 }
