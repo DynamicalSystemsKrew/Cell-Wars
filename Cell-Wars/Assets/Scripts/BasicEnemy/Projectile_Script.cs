@@ -26,5 +26,12 @@ public class Projectile_Script : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.tag == "Ally")
+        {
+            AllyMovement allyController = (AllyMovement) collision.gameObject.GetComponent(typeof(AllyMovement));
+            allyController.DestroySelf();
+        }
+        Destroy(gameObject);
     }
 }
